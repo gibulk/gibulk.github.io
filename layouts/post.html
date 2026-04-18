@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="single-post">
+  <header class="post-header">
+    <div class="post-category">{{ page.categories | first | default: "Umum" }}</div>
+    <h1 class="post-header__title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <span><i class="far fa-calendar-alt"></i> {{ page.date | date: "%d %B %Y" }}</span>
+      <span><i class="far fa-clock"></i> {% assign words = content | number_of_words %}{% if words < 360 %}1{% else %}{{ words | divided_by: 180 }}{% endif %} menit</span>
+      <span><i class="far fa-user"></i> {{ site.author.name }}</span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    {{ content }}
+  </div>
+  
+  <footer class="post-footer">
+    <div class="author-box">
+      <div class="author-box__name">{{ site.author.name }}</div>
+      <div class="author-box__bio">{{ site.author.bio }}</div>
+    </div>
+    
+    <div class="post-nav">
+      {% if page.previous.url %}
+      <a class="prev-post" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
+      {% endif %}
+      {% if page.next.url %}
+      <a class="next-post" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
+      {% endif %}
+    </div>
+  </footer>
+</article>
