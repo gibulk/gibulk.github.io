@@ -1,0 +1,14 @@
+<header class="blog-header">
+  <div class="brand">
+    <div class="brand-icon">{{ site.author.name | slice: 0 }}</div>
+    <div>
+      <a href="{{ '/' | relative_url }}" class="brand-text">{{ site.title }}</a>
+      <div class="brand-sub">{{ site.tagline }}</div>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="{{ '/' | relative_url }}">Beranda</a>
+    <a href="{{ '/arsip' | relative_url }}">Tulisan</a>
+    <a href="{{ '/tentang' | relative_url }}">Tentang</a>
+  </nav>
+</header>
