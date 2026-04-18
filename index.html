@@ -1,0 +1,58 @@
+---
+layout: default
+title: Beranda
+---
+
+<!-- Intro Section -->
+<section class="intro-card">
+  <div class="intro-left">
+    <span class="greeting">📌 PERSONAL BLOG</span>
+    <h1 class="name-large">{{ site.author.name }}<span class="highlight">.</span></h1>
+    <p class="bio">{{ site.author.bio }}</p>
+    <div class="stats">
+      <span class="stat-item"><i class="far fa-newspaper"></i> {{ site.posts | size }}+ artikel</span>
+      <span class="stat-item"><i class="far fa-building"></i> 6+ tahun</span>
+      <span class="stat-item"><i class="far fa-compass"></i> Jakarta</span>
+    </div>
+  </div>
+  <div class="intro-right">
+    <div class="quote-box">
+      “Saya percaya bahwa konsistensi kecil membentuk perubahan besar. Blog ini adalah jejak dari proses itu.”
+      <div class="quote-author">— {{ site.author.name }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts -->
+<div class="section-title">
+  <h2>📝 Tulisan terbaru</h2>
+  <a href="/arsip">Lihat semua <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="post-grid">
+  {% for post in site.posts limit:6 %}
+  <article class="post-card">
+    <div class="post-category">{{ post.categories | first | default: "Umum" }}</div>
+    <h3 class="post-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <div class="post-meta">
+      <span><i class="far fa-calendar-alt"></i> {{ post.date | date: "%d %b %Y" }}</span>
+      <span><i class="far fa-clock"></i> {% assign words = post.content | number_of_words %}{% if words < 360 %}1{% else %}{{ words | divided_by: 180 }}{% endif %} menit</span>
+    </div>
+    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+    <a href="{{ post.url | relative_url }}" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+  </article>
+  {% endfor %}
+</div>
+
+<!-- Call to Connect -->
+<div class="connect-box">
+  <div>
+    <h3>Mari terhubung</h3>
+    <p>Saya terbuka untuk diskusi, kolaborasi, atau sekadar berbagi sudut pandang.</p>
+  </div>
+  <div>
+    <a href="/kontak" class="connect-button">Kirim pesan →</a>
+  </div>
+</div>
