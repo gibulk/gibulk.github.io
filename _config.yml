@@ -1,0 +1,27 @@
+# Konfigurasi Blog Gibulk
+title: Gibulk
+tagline: pemikiran · karya · cerita
+description: Blog pribadi Gibulk — menulis tentang strategi digital, pengembangan diri, dan perspektif profesional.
+author:
+  name: Gibulk
+  bio: Menulis tentang strategi digital, pengembangan diri, dan sudut pandang seorang profesional yang terus belajar.
+  
+# URL
+url: https://gibulk.github.io
+baseurl: ""
+
+# Tema kustom (kita buat sendiri)
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Pengaturan posting
+paginate: 6
+paginate_path: "/halaman/:num/"
+
+# Bahasa
+lang: id-ID
+
+# Social (ganti dengan milik Anda nanti)
+twitter_username: gibulk
+github_username: gibulk
+linkedin_username: gibulk
