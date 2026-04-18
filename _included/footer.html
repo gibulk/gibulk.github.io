@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div>© {{ site.time | date: '%Y' }} {{ site.author.name }} — Dibangun dengan presisi & kehangatan.</div>
+  <div class="social">
+    {% if site.twitter_username %}
+    <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    {% endif %}
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    {% endif %}
+    {% if site.linkedin_username %}
+    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    {% endif %}
+    <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS"><i class="fas fa-rss"></i></a>
+  </div>
+</footer>
